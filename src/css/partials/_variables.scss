@@ -3,12 +3,24 @@ $color-white: #ffffff;
 $color-black: #000000;
 $color-red: #d0021b;
 $color-yellow: #f5a623;
-$color-blue: #4a90e2;
+$color-blue-light: #0093FF;
+$color-blue: #5791FF;
 $color-green: #7ed321;
 $color-gray-lighter: #f2f2f2;
 $color-gray-light: #e1e1e1;
-$color-gray: #c8c8c8;
+$color-gray: #5C5C5C;
 $color-gray-dark: #757575;
+
+$color-blue-62: rgba(87, 145, 255, .62);
+$color-blue-light-35: rgba(0, 147, 255, .35);
+$color-blue-light-44: rgba(0, 147, 255, .44);
+$color-blue-light-73: rgba(0, 147, 255, .73);
+$color-blue-lighter-8: rgba(0, 50, 165, .08);
+$color-gray-62: rgba(92, 92, 92, .62);
+$color-white-36: rgba(255, 255, 255, .36);
+$color-white-62: rgba(255, 255, 255, .62);
+$color-white-73: rgba(255, 255, 255, .73);
+$color-white-99: rgba(255, 255, 255, .99);
 
 $radius: 3px;
 

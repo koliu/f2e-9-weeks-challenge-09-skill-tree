@@ -1,25 +1,29 @@
-import Index from "../components/index.vue";
-import About from "../components/about.vue";
-import Spec from "../components/spec.vue";
-
 export default {
   routes: [{
       path: "/",
-      component: Index,
+      component: () =>
+        import ("../pages/index.vue"),
       alias: "/index"
     },
     {
+      path: "/ui",
+      component: () =>
+        import ("../components/roadmap-item.vue"),
+    },
+    {
       path: "/spec",
-      component: Spec
+      component: () =>
+        import ("../pages/spec.vue"),
     },
     {
       path: "/about",
-      component: About
+      component: () =>
+        import ("../pages/about.vue"),
     },
     {
       path: "*",
       component: () =>
-        import ("../components/404.vue"),
+        import ("../pages/404.vue"),
       alias: "/404"
     }
   ]
