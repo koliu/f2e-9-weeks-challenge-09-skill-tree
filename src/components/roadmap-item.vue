@@ -1,8 +1,7 @@
 <template lang="pug">
   .map-item(:class="{'map-item--active' : status !== ''}")
-    .map-item__img
+    .map-item__box(:class="(status === '') ? '' : 'map-item__box--' + status")
       img.icon(:src="image", :class="{ 'icon--active' : status === 'active'}")
-    .map-item__box(:class="getBoxClass()")
     .map-item__text(v-text="text")
 </template>
 <script>
@@ -36,43 +35,53 @@ export default {
   }
 
   &__box {
-    background-color: $color-blue-light-35;
-    border: 8px solid $color-gray-62;
     border-radius: 35px;
-    box-shadow: 0 3px 6px $color-blue-light-44;
     height: 100%;
-    left: 0;
-    position: absolute;
     width: 100%;
-    top: 0;
     z-index: 10;
-
-    &--init {
-      border: 8px solid $color-white-62;
-    }
-
-    &--active {
-      border: 8px solid $color-blue-62;
-    }
-
-  }
-
-  &__img {
-    position: relative;
-    height: 100%;
-    width: 100%;
     @include flex-box(center, center);
-    z-index: 20;
+
+    &::before {
+      background-color: $color-blue-light-35;
+      border-radius: 35px;
+      content: '';
+      height: 90%;
+      position: absolute;
+      width: 90%;
+      z-index: 12;
+    }
+
+    &::after {
+      border: 12px solid $color-gray-62;
+      border-radius: 35px;
+      box-shadow: 0 3px 6px $color-blue-light-44;
+      box-sizing: border-box;
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: border-color .3s ease;
+      z-index: 15;
+    }
+
+    &--init::after {
+      border-color: $color-white-62;
+    }
+
+    &--active::after {
+      border-color: $color-blue-62;
+    }
 
     .icon {
-      border-style: none;
       filter: grayscale(1) drop-shadow(0 0 0 $color-white);
       transition: filter .3s ease;
+      z-index: 20;
 
       &--active {
         filter: grayscale(0) drop-shadow(0 0 6px $color-white);
       }
     }
+
   }
 
   &__text {
