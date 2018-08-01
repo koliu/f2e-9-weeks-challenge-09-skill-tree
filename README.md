@@ -69,3 +69,22 @@ export default {
 
 - [Listening for Native Events on Components with v-on](https://vuejs.org/v2/guide/migration.html#Listening-for-Native-Events-on-Components-with-v-on-changed)
 - [Vue v-on:click does not work on component](https://stackoverflow.com/questions/41475447/vue-v-onclick-does-not-work-on-component)
+
+### CSS濾鏡效果
+
+- [CSS filter Property](https://www.w3schools.com/cssref/css3_pr_filter.asp)
+- [CSS濾鏡效果](http://blog.shihshih.com/css-filter/)
+- [CSS 陰影效果的比較：Drop-Shadow 與 Box-Shadow](http://blog.shihshih.com/drop-shadow-vs-box-shadow/)
+
+不同 filter 之間無法用 transition 漸變交替，必須各自設定：
+
+```css
+.icon {
+  filter: grayscale(1) drop-shadow(0 0 0 $color-white);
+  transition: filter .5s ease;
+
+  &--active {
+    filter: grayscale(0) drop-shadow(0 0 6px $color-white);
+  }
+}
+```

@@ -1,7 +1,7 @@
 <template lang="pug">
   .map-item(:class="{'map-item--active' : status !== ''}")
     .map-item__img
-      img(:src="image")
+      img.icon(:src="image", :class="{ 'icon--active' : status === 'active'}")
     .map-item__box(:class="getBoxClass()")
     .map-item__text(v-text="text")
 </template>
@@ -23,9 +23,9 @@ export default {
 
 .map-item {
   box-sizing: border-box;
-  height: 70px;
+  height: 104px;
   position: relative;
-  width: 70px;
+  width: 104px;
 
   &--active {
     cursor: pointer;
@@ -37,23 +37,24 @@ export default {
 
   &__box {
     background-color: $color-blue-light-35;
-    border: 12px solid $color-gray-62;
-    border-radius: 25px;
+    border: 8px solid $color-gray-62;
+    border-radius: 35px;
     box-shadow: 0 3px 6px $color-blue-light-44;
     height: 100%;
-    position: absolute;
-    top: 0;
     left: 0;
+    position: absolute;
     width: 100%;
+    top: 0;
     z-index: 10;
 
     &--init {
-      border: 12px solid $color-white-62;
+      border: 8px solid $color-white-62;
     }
 
     &--active {
-      border: 12px solid $color-blue-62;
+      border: 8px solid $color-blue-62;
     }
+
   }
 
   &__img {
@@ -63,8 +64,14 @@ export default {
     @include flex-box(center, center);
     z-index: 20;
 
-    img {
-      transform: scale(.45);
+    .icon {
+      border-style: none;
+      filter: grayscale(1) drop-shadow(0 0 0 $color-white);
+      transition: filter .3s ease;
+
+      &--active {
+        filter: grayscale(0) drop-shadow(0 0 6px $color-white);
+      }
     }
   }
 
