@@ -88,3 +88,11 @@ export default {
   }
 }
 ```
+
+### SVG & CSS
+
+使用 CSS 控制 SVG 時，必須了解到 SVG 的屬性分為：
+- [可以使用 CSS 控制的 properties](http://www.w3.org/TR/SVG/propidx.html)
+- [不能使用 CSS 控制的 attributes](http://www.w3.org/TR/SVG/attindex.html) 
+
+- [SVG 研究之路 (14) - 控制 SVG 的注意事項](http://www.oxxostudio.tw/articles/201406/svg-14-control-SVG.html)
