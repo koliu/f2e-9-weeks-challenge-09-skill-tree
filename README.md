@@ -40,3 +40,32 @@ npm i -D url-loader image-webpack-loader
 }
 ```
 
+### 在 component 根元素加事件
+
+若要在 componet 的根元素上加事件，有兩種做法：
+1. 加 .native
+
+```pug
+<!-- roadmap.vue -->
+map-item(@click.prevent.native="onSelected(item)")
+```
+
+2. 採用 emit
+
+```pug
+<!-- roadmap.vue -->
+map-item(@on-click="onSelected", :item="item")
+
+<!-- roadmap-item.vue -->
+<template lang="pug">
+  .map-item(@click.prevent="$emit('on-click', item)")
+</template>
+<script>
+export default {
+  props: ['item'],
+}
+</script>
+```
+
+- [Listening for Native Events on Components with v-on](https://vuejs.org/v2/guide/migration.html#Listening-for-Native-Events-on-Components-with-v-on-changed)
+- [Vue v-on:click does not work on component](https://stackoverflow.com/questions/41475447/vue-v-onclick-does-not-work-on-component)

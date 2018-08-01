@@ -2,134 +2,153 @@
   {
     "id": 1,
     "caption": "設計規範",
-    "pre-condition": [],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_blade-1.png"
+    "pre-nodes": [],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_blade-1.png",
+    "desc": ""
   },
   {
     "id": 2,
     "caption": "爬梳乾貨",
-    "pre-condition": [1],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_meat.png"
+    "pre-nodes": [1],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_meat.png",
+    "desc": ""
   },
   {
     "id": 3,
     "caption": "UX思維",
-    "pre-condition": [],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_shield.png"
+    "pre-nodes": [],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_shield.png",
+    "desc": ""
   },
   {
     "id": 4,
     "caption": "設計思考",
-    "pre-condition": [3],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_hat.png"
+    "pre-nodes": [3],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_hat.png",
+    "desc": ""
   },
   {
     "id": 5,
     "caption": "心理學",
-    "pre-condition": [4],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_horn.png"
+    "pre-nodes": [4],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_horn.png",
+    "desc": ""
   },
   {
     "id": 6,
     "caption": "線框稿",
-    "pre-condition": [2,5],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_hammer.png"
+    "pre-nodes": [2,5],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_hammer.png",
+    "desc": ""
   },
   {
     "id": 7,
     "caption": "插畫",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_illustration.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_illustration.png",
+    "desc": ""
   },
   {
     "id": 8,
     "caption": "配色",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_color.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_color.png",
+    "desc": ""
   },
   {
     "id": 9,
     "caption": "美感",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_sense.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_sense.png",
+    "desc": ""
   },
   {
     "id": 10,
     "caption": "文案",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_text.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_text.png",
+    "desc": ""
   },
   {
     "id": 11,
     "caption": "靈感",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_inspiration.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_inspiration.png",
+    "desc": ""
   },
   {
     "id": 12,
     "caption": "圖庫",
-    "pre-condition": [6],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_pictures.png"
+    "pre-nodes": [6],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_pictures.png",
+    "desc": ""
   },
   {
     "id": 13,
     "caption": "UI設計",
-    "pre-condition": [7, 8, 9, 10, 11, 12],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_axe.png"
+    "pre-nodes": [7, 8, 9, 10, 11, 12],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_axe.png",
+    "desc": ""
   },
   {
     "id": 14,
     "caption": "原型",
-    "pre-condition": [13],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_blade.png"
+    "pre-nodes": [13],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_blade.png",
+    "desc": ""
   },
   {
     "id": 15,
     "caption": "標註",
-    "pre-condition": [14],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_book.png"
+    "pre-nodes": [14],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_book.png",
+    "desc": ""
   },
   {
     "id": 16,
     "caption": "略懂開發",
-    "pre-condition": [14],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_quill.png"
+    "pre-nodes": [14],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_quill.png",
+    "desc": ""
   },
   {
     "id": 17,
     "caption": "版本控制",
-    "pre-condition": [14],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_timer.png"
+    "pre-nodes": [14],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_timer.png",
+    "desc": ""
   },
   {
     "id": 18,
     "caption": "厚黑學",
-    "pre-condition": [14],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_emblem.png"
+    "pre-nodes": [14],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_emblem.png",
+    "desc": ""
   },
   {
     "id": 19,
     "caption": "出師",
-    "pre-condition": [14],
-    "desc": "",
-    "image": "http://localhost:28080/src/img/img_sword.png"
+    "pre-nodes": [14],
+    "done": false,
+    "image": "http://localhost:28080/src/img/img_sword.png",
+    "desc": ""
   }
 ]

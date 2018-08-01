@@ -1,7 +1,8 @@
 <template lang="pug">
-  .map-item
+  .map-item(:class="{'map-item--active' : status !== ''}")
+    .map-item__img
+      img(:src="image")
     .map-item__box(:class="getBoxClass()")
-    img.map-item__img(:src="image")
     .map-item__text(v-text="text")
 </template>
 <script>
@@ -18,13 +19,17 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../css/partials/variables";
+@import "../css/partials/predefined";
 
 .map-item {
   box-sizing: border-box;
   height: 70px;
   position: relative;
   width: 70px;
+
+  &--active {
+    cursor: pointer;
+  }
 
   & * {
     box-sizing: border-box;
@@ -36,7 +41,9 @@ export default {
     border-radius: 25px;
     box-shadow: 0 3px 6px $color-blue-light-44;
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     z-index: 10;
 
@@ -50,11 +57,15 @@ export default {
   }
 
   &__img {
-    position: absolute;
-    top: -20px;
-    left: -10px;
-    transform: scale(.6);
+    position: relative;
+    height: 100%;
+    width: 100%;
+    @include flex-box(center, center);
     z-index: 20;
+
+    img {
+      transform: scale(.45);
+    }
   }
 
   &__text {
