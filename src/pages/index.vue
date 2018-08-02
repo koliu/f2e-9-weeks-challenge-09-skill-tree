@@ -14,9 +14,9 @@
       .info__description
       .info__pandora
     .footer
-      .footer__bg
-      .footer__hex
-      .footer__rocket
+      img.footer__bg(src="http://localhost:28080/src/img/img_footer.png")
+      img.footer__hexcat(src="http://localhost:28080/src/img/img_hexcat.png")
+      img.footer__rocket(src="http://localhost:28080/src/img/img_rocket.png")
 </template>
 <script>
 export default {
@@ -63,6 +63,35 @@ export default {
 .app{
   background: linear-gradient(0deg, #301A3B, #10030A);
   padding-bottom: 30px;
+  position: relative;
+}
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  height: 665px;
+
+  &__bg {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+  &__hexcat {
+    position: absolute;
+    top: 205px;
+    left: -13px;
+    transform: scale(.7);
+    z-index: 10;
+  }
+  &__rocket {
+    position: absolute;
+    top: 90px;
+    right: 210px;
+    transform: scale(.7);
+    z-index: 10;
+  }
 }
 
 .btn-login {
