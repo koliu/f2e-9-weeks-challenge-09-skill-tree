@@ -74,8 +74,8 @@ export default {
 
     .icon {
       filter: grayscale(.8) drop-shadow(0 0 0 $color-white);
-      transition: filter .3s ease, transform .3s ease;
-      transform: scale(.85);
+      transition: filter .3s ease, transform .3s cubic-bezier(1, 2.74, 0.54, 0.21);
+      transform: scale(.65);
       z-index: 20;
 
       &--active {

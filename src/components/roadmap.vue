@@ -1,11 +1,6 @@
 <template lang="pug">
   .map
-    svg.bg(width="1340", height="600", xmlns="http://www.w3.org/2000/svg")
-      g
-        title background
-        rect(fill="none", id="canvas_background", height="602", width="1342", y="-1", x="-1")
-        g(display="none", overflow="visible", y="0", x="0", height="100%", width="100%", id="canvasGrid")
-          rect(fill="url(#gridpattern)", stroke-width="0", y="0", x="0", height="100%", width="100%")
+    svg.bg(width="1340", height="520", xmlns="http://www.w3.org/2000/svg")
       g.arrow
         title Layer 1
         g.arrow__item1(:class="getArrowClasses(1)")
@@ -50,7 +45,7 @@
           path(transform="rotate(-90 1116,420) ",d="m1101.785988,431.429704l14.33334,-25.08333l14.33333,25.08333l-28.66667,0z")
           path(transform="rotate(-90 1116,131) ",d="m1101.785988,143.363847l14.33334,-25.08333l14.33333,25.08333l-28.66667,0z")
     template(v-for="(item, index) in data")
-      map-item(class="item", :class="`item--${item.id}`", :status="calStatus(item)", :text="item.caption", :image="item.image", @click.prevent.native="onSelected(item)")
+      map-item(class="item", :class="`item--${item.id}`", :status="calStatus(item)", :text="item.caption", :image="item.image", @click.prevent.native="onSelected(item)", v-if="item.type === 'map-main'", @mouseover.native="$emit('set-focused',item)")
 
 </template>
 <script>
