@@ -143,9 +143,7 @@ export default {
 <style lang="scss" scoped>
 @import "../css/partials/variables";
 .map {
-  border: 1px dashed $color-yellow;
   box-sizing: border-box;
-  padding: 24px 0 48px 0;
   position: relative;
 
   .bg {
@@ -158,79 +156,79 @@ export default {
   }
   .item--1 {
     left: 19px;
-    top: 135px;
+    top: 111px;
   }
   .item--2 {
     left: 215px;
-    top: 135px;
+    top: 111px;
   }
   .item--3 {
     left: 19px;
-    top: 360px;
+    top: 336px;
   }
   .item--4 {
     left: 173px;
-    top: 360px;
+    top: 336px;
   }
   .item--5 {
     left: 330px;
-    top: 360px;
+    top: 336px;
   }
   .item--6 {
     left: 431px;
-    top: 245px;
+    top: 221px;
   }
   .item--7 {
     left: 610px;
-    top: 105px;
+    top: 81px;
   }
   .item--8 {
     left: 725px;
-    top: 105px;
+    top: 81px;
   }
   .item--9 {
     left: 610px;
-    top: 245px;
+    top: 221px;
   }
   .item--10 {
     left: 725px;
-    top: 245px;
+    top: 221px;
   }
   .item--11 {
     left: 610px;
-    top: 390px;
+    top: 366px;
   }
   .item--12 {
     left: 725px;
-    top: 390px;
+    top: 366px;
   }
   .item--13 {
     left: 891px;
-    top: 245px;
+    top: 221px;
   }
   .item--14 {
     left: 1035px;
-    top: 245px;
+    top: 221px;
   }
   .item--15 {
     left: 998px;
-    top: 105px;
+    top: 81px;
   }
   .item--16 {
     left: 1207px;
-    top: 105px;
+    top: 81px;
   }
   .item--17 {
     left: 998px;
-    top: 390px;
+    top: 366px;
   }
   .item--18 {
     left: 1207px;
-    top: 390px;
+    top: 366px;
   }
   .item--19 {
     left: 1233px;
-    top: 245px;
+    top: 221px;
   }
 
   .arrow__item {

@@ -4,10 +4,12 @@
     button.btn-login(@click.prevent="logout", v-if="this.loginManager.isLoggedIn()") LOGOUT
     
     .header
-      .header__ball
+      img.header__planet(src="http://localhost:28080/src/img/img_planet.png")
       .header__title
-        .header__title__tw
-        .header__title__en
+        .header__title-tw 介面設計師轉職之路
+        .header__title-en UI Designer Road Map
+      .dot-line.dot-line__head-1
+      .dot-line.dot-line__head-2
     roadmap.roadmap(:data="data")
     .info
       .info__challenger
@@ -64,6 +66,57 @@ export default {
   background: linear-gradient(0deg, #301A3B, #10030A);
   padding-bottom: 30px;
   position: relative;
+
+  .roadmap {
+    position: relative;
+    top: -90px;
+    transform: scale(.9);
+  }
+}
+
+.header {
+  position: relative;
+  @include flex-box(flex-start, center, row, nowrap);
+
+  &__planet {
+    position: relative;
+    left: 50px;
+    transform: scale(.7);
+    z-index: 10;
+  }
+
+  &__title {
+    position: relative;
+    top: 30px;
+    line-height: 82px;
+    font-size: 79px;
+    color: $color-white;
+    text-shadow: 2px 2px 8px $color-white-62;
+
+    &-en {
+      line-height: 72px;
+      font-size: 69px;
+    }
+  }
+}
+
+.dot-line {
+  border-left: 18px dotted $color-white-36;
+  position: absolute;
+  transform: scale(.5);
+  z-index: 5;
+  
+  &__head-1 {
+    top: -25px;
+    left: 182px;
+    height: 150px;
+  }
+
+  &__head-2 {
+    top: -75px;
+    right: 282px;
+    height: 350px;
+  }
 }
 
 .footer {
@@ -88,7 +141,7 @@ export default {
   &__rocket {
     position: absolute;
     top: 90px;
-    right: 210px;
+    right: 206px;
     transform: scale(.7);
     z-index: 10;
   }

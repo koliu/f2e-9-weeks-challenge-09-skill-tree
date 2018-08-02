@@ -73,7 +73,7 @@ export default {
     }
 
     .icon {
-      filter: grayscale(1) drop-shadow(0 0 0 $color-white);
+      filter: grayscale(.8) drop-shadow(0 0 0 $color-white);
       transition: filter .3s ease, transform .3s ease;
       transform: scale(.85);
       z-index: 20;
