@@ -21,7 +21,7 @@
           .content(v-text="current.desc")
         button.desc__btn-open(v-if="current && current.id === 20" @click.prevent="openPandoraBox") 好奇打開
       .info__pandora
-        img(src="http://localhost:28080/src/img/img_padora.png")
+        img(src="http://localhost:28080/src/img/img_padora.png", v-if="!isMainMapDone")
     .pandora
       pandoramap.pandora__map(:data="data", @set-focused="setCurrent", v-if="showPandoraMap")
     .footer
@@ -114,7 +114,7 @@ export default {
 
   .roadmap {
     position: relative;
-    top: -90px;
+    // top: -90px;
     transform: scale(0.9);
   }
 }
@@ -148,7 +148,7 @@ export default {
 .info {
   position: relative;
   height: 250px;
-  top: -180px;
+  // top: -180px;
   @include flex-box(flex-start, flex-start, row, nowrap);
 
   &__monocat {
@@ -202,12 +202,14 @@ export default {
       border-radius: 39px;
       box-shadow: 0 3px 6px $color-blue-light-44;
       color: $color-white;
+      cursor: pointer;
       font-size: 28px;
       height: 70px;
       line-height: 36px;
       position: absolute;
       right: 60px;
       width: 201px;
+      z-index: 25;
 
       &:hover {
         background-color: $color-blue-62;
@@ -268,8 +270,8 @@ export default {
 
   &__map {
     position: absolute;
-    left: 330px;
-    top: -90px;
+    left: 520px;
+    top: 100px;
   }
 }
 
@@ -283,21 +285,21 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 2;
   }
   &__hexcat {
     position: absolute;
     top: 205px;
     left: -13px;
     transform: scale(0.7);
-    z-index: 10;
+    z-index: 3;
   }
   &__rocket {
     position: absolute;
     top: 90px;
     right: 206px;
     transform: scale(0.7);
-    z-index: 10;
+    z-index: 3;
   }
 }
 
