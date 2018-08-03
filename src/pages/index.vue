@@ -20,8 +20,8 @@
           .caption(v-text="current.caption")
           .content(v-text="current.desc")
         button.desc__btn-open(v-if="current && current.id === 20" @click.prevent="openPandoraBox") 好奇打開
-      .info__pandora
-        img(src="http://localhost:28080/src/img/img_padora.png", v-if="!isMainMapDone")
+      .info__pandora(v-if="!isMainMapDone")
+        img(src="http://localhost:28080/src/img/img_padora.png")
     .pandora
       pandoramap.pandora__map(:data="data", @set-focused="setCurrent", v-if="showPandoraMap")
     .footer
@@ -89,7 +89,7 @@ export default {
           this.setCurrent(this.data[0]);
 
           // for test
-          this.data.forEach(e => (e.done = e.id > 0 && e.id < 19));
+          // this.data.forEach(e => (e.done = e.id > 0 && e.id < 19));
         })
         .catch(err => {
           throw new Error(`Fail to load data of questions: ${err}`);

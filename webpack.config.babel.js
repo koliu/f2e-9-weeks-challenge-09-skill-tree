@@ -37,6 +37,11 @@ export default (module = {
               replacement: function (match, p1, offset, string) {
                 return '"';
               }
+            }, {
+              pattern: /\"^http.+\/src\//g,
+              replacement: function (match, p1, offset, string) {
+                return '"';
+              }
             }],
           }),
           {
