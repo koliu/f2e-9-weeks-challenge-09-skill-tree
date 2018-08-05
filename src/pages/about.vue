@@ -6,19 +6,23 @@
         br
         i 一個 fullstack 導向的攻城獅
         br
-        i 這裡是攻打 F2E 的第 5 座城堡 -- Comic Viewer
-        br
-        i 目前已攻下： 
-        br
-        i 待進攻： 
+        i 這裡是攻打 F2E 的第 9 座城堡 -- Skill Tree
         br
         i 採用的武器有
         br
         ul
           li css flex
-          li css animation/transition
+          li css transition
+          li vue components
+          li svg
           li scss
           li pug
+      .about-item
+        i 終……終於來到最後一個關卡
+        br
+        i 這個關卡主要用來練習不規則排版、vue 母子元件資料/狀態的改變及傳遞
+        br
+        i 由於不規則的箭頭符號難以模組化, 所以改練 svg 來畫
 </template>
 
 <script>

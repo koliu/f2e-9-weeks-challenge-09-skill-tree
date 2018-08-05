@@ -6,26 +6,29 @@ import webpack from "webpack";
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import StringReplacePlugin from 'string-replace-webpack-plugin';
 
+const root = path.resolve(__dirname, './');
+console.log('Root path: ', root);
+
 // the path(s) that should be cleaned
 const pathsToClean = [
-  "dist", // removes 'dist' folder
+  `${root}/dist`, // removes 'dist' folder
   "build/*.*" // removes all files in 'build' folder
   // 'web/*.js'      // removes all JavaScript files in 'web' folder
 ];
 
 // the clean options to use
 const cleanOptions = {
-  root: "",
+  root,
   exclude: [],
   verbose: true,
   dry: false
 };
 
 export default (module = {
-  entry: "./src/js/main.js",
+  entry: `${root}/src/js/main.js`,
   output: {
     filename: "bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: `${root}/dist`
   },
   module: {
     rules: [{
@@ -34,11 +37,6 @@ export default (module = {
           StringReplacePlugin.replace({
             replacements: [{
               pattern: /\"\/src\//g,
-              replacement: function (match, p1, offset, string) {
-                return '"';
-              }
-            }, {
-              pattern: /\"^http.+\/src\//g,
               replacement: function (match, p1, offset, string) {
                 return '"';
               }
@@ -57,7 +55,7 @@ export default (module = {
             pattern: /\.\.\/src\//g,
             replacement: function (match, p1, offset, string) {
               return '../dist/';
-            }
+            } 
           }],
           prevLoaders: ["babel-loader"]
         })
@@ -104,16 +102,27 @@ export default (module = {
           }
         ],
         exclude: "/node_modules/"
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 40000
-            }
-          },
-          'image-webpack-loader'
+      }, {
+        test: /\.json$/,
+        use: [
+          StringReplacePlugin.replace({
+            replacements: [{
+              pattern: /\"\/src\//g,
+              replacement: function (match, p1, offset, string) {
+                return '"';
+              }
+            }],
+          }),
+          // {
+          //   loader: 'file-loader',
+          //   options: {
+          //         name: '[path][name].[ext]', // 自訂輸出的檔名規則。Default: '[hash].[ext]'
+          //     //     // context: '',
+          //     //     // emitFile: false, // 不將把檔案輸出到 /dist/ 中。Default: true
+          //     //     // publicPath: 'assets/' // Default: __webpack_public_path__ == output.publicPath
+          //         // outputPath: 'data/'
+          //   }
+          // }
         ]
       }
     ]
@@ -136,7 +145,15 @@ export default (module = {
       context: path.resolve(__dirname, "src", "static"),
       from: '**/*',
       to: 'static',
-      force: true
+      force: true,
+      ignore: ['specs/*', 'img/svg/*', 'img/*@2x.png']
+    },{
+      // Copy src/data to dist/data
+      context: `${root}/src/data`,
+      from: '**/*',
+      to: 'data',
+      force: true,
+      ignore: []
     }], {
       context: '',
       copyUnmodified: false,

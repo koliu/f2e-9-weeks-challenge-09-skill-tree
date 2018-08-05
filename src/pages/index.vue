@@ -4,7 +4,7 @@
     button.btn-login(@click.prevent="logout", v-if="this.loginManager.isLoggedIn()") LOGOUT
     
     .header
-      img.header__planet(src="http://localhost:28080/src/img/img_planet.png")
+      img.header__planet(src="/src/static/img/img_planet.png")
       .header__title
         .header__title-tw 介面設計師轉職之路
         .header__title-en UI Designer Road Map
@@ -12,7 +12,7 @@
       .dot-line.dot-line__head-2
     roadmap.roadmap(:data="data", @set-focused="setCurrent")
     .info
-      img.info__monocat(src="http://localhost:28080/src/img/img_monocat.png")
+      img.info__monocat(src="/src/static/img/img_monocat.png")
       .info__desc-box.desc
         .desc__icon(v-if="current")
           img(:src="current.image")
@@ -21,13 +21,13 @@
           .content(v-text="current.desc")
         button.desc__btn-open(v-if="current && current.id === 20" @click.prevent="openPandoraBox") 好奇打開
       .info__pandora(v-if="!isMainMapDone")
-        img(src="http://localhost:28080/src/img/img_padora.png")
+        img(src="/src/static/img/img_padora.png")
     .pandora
       pandoramap.pandora__map(:data="data", @set-focused="setCurrent", v-if="showPandoraMap")
     .footer
-      img.footer__bg(src="http://localhost:28080/src/img/img_footer.png")
-      img.footer__hexcat(src="http://localhost:28080/src/img/img_hexcat.png")
-      img.footer__rocket(src="http://localhost:28080/src/img/img_rocket.png")
+      img.footer__bg(src="/src/static/img/img_footer.png")
+      img.footer__hexcat(src="/src/static/img/img_hexcat.png")
+      img.footer__rocket(src="/src/static/img/img_rocket.png")
 </template>
 <script>
 export default {
